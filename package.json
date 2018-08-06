@@ -1,0 +1,16 @@
+{
+  "name": "build-a-server-rendered-code-split-app-in-react-with-react-universal-component",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "babel-plugin-universal-import": "^3.0.0",
+    "extract-css-chunks-webpack-plugin": "^3.0.11",
+    "react-universal-component": "^3.0.0",
+    "webpack-flush-chunks": "^2.0.1",
+    "webpack-hot-server-middleware": "^0.5.0"
+  }
+}
