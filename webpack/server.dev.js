@@ -22,4 +22,14 @@ module.exports = {
     libraryTarget: 'commonjs2'
   },
   entry: path.resolve(__dirname, '../server/render.js'),
+  plugins: [
+    new webpack.optimize.LimitChunkCountPlugin({
+      maxChunks: 1
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      }
+    })
+  ]
 }

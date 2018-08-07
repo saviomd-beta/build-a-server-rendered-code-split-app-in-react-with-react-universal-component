@@ -21,7 +21,11 @@ module.exports = {
     ]
   },
   devtool: 'eval',
-  entry: path.resolve(__dirname, '../src/index.js'),
+  entry: [
+    'webpack-hot-middleware/client',
+    'react-hot-loader/patch',
+    path.resolve(__dirname, '../src/index.js')
+  ],
   output: {
     filename: '[name].js',
     chunkFilename: '[name].js',
@@ -34,6 +38,12 @@ module.exports = {
       names: ['bootstrap'],
       filename: '[name].js',
       minChunks: Infinity
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development')
+      }
     })
   ]
 }
